@@ -2,9 +2,10 @@ package {{package}};
 
 import org.springframework.cloud.openfeign.FeignClient;
 import {{configPackage}}.ClientConfiguration;
+import {{fallbackPackage}}.ClientFallback;
 
 {{=<% %>=}}
-@FeignClient(name="${<%title%>.name:<%title%>}", url="${<%title%>.url:<%basePath%>}", configuration = ClientConfiguration.class)
+@FeignClient(name="${<%title%>.name:<%title%>}", url="${<%title%>.url:<%basePath%>}", configuration = ClientConfiguration.class, fallback = ClientFallback.class)
 <%={{ }}=%>
 public interface {{classname}}Client extends {{classname}} {
 }
